@@ -1,0 +1,287 @@
+username: cisco
+password: cisco
+
+# Network Devices
+
+devices:
+  - name: spoke1
+    host_ip: '192.168.163.223'
+    netconf_port: 830
+    VRFs:
+      - name: RED
+    Profiles:
+      - name: vpnprof
+    interfaces:
+      - name: GigabitEthernet2
+        enabled: "true"
+        ip: '172.16.30.2'
+        mask: '255.255.255.0'
+    TunnelInterfaces:
+      - name: 0
+        enabled: "true"
+        ip: '10.0.0.2'
+        mask: '255.255.255.0'
+        source: GigabitEthernet2
+        profile: vpnprof
+        nbma_ip: '10.10.10.1'
+        hub_ip: '10.0.0.1'
+        VRF: RED
+        key: 100000
+        network_id: 100000
+    ospf:
+      process_id: 1
+      networks:
+       - network: 172.16.30.0
+         wildcard: 0.0.0.255
+         area: "0"
+
+
+  - name: spoke2
+    host_ip: '192.168.163.224'
+    netconf_port: 830
+    VRFs:
+      - name: RED
+    Profiles:
+      - name: vpnprof
+    interfaces:
+      - name: GigabitEthernet2
+        enabled: "true"
+        ip: '172.16.30.3'
+        mask: '255.255.255.0'
+    TunnelInterfaces:
+      - name: 0
+        enabled: "true"
+        ip: '10.0.0.3'
+        mask: '255.255.255.0'
+        source: GigabitEthernet2
+        profile: vpnprof
+        nbma_ip: '10.10.10.1'
+        hub_ip: '10.0.0.1'
+        VRF: RED
+        key: 100000
+        network_id: 100000
+    ospf:
+      process_id: 1
+      networks:
+       - network: 172.16.30.0
+         wildcard: 0.0.0.255
+         area: "0"
+
+  - name: spoke3
+    host_ip: '192.168.163.225'
+    netconf_port: 830
+    VRFs:
+      - name: RED
+    Profiles:
+      - name: vpnprof
+    interfaces:
+      - name: GigabitEthernet2
+        enabled: "true"
+        ip: '172.16.30.4'
+        mask: '255.255.255.0'
+    TunnelInterfaces:
+      - name: 0
+        enabled: "true"
+        ip: '10.0.0.4'
+        mask: '255.255.255.0'
+        source: GigabitEthernet2
+        profile: vpnprof
+        nbma_ip: '10.10.10.1'
+        hub_ip: '10.0.0.1'
+        VRF: RED
+        key: 100000
+        network_id: 100000
+    ospf:
+      process_id: 1
+      networks:
+       - network: 172.16.30.0
+         wildcard: 0.0.0.255
+         area: "0"
+
+
+  - name: spoke4
+    host_ip: '192.168.163.226'
+    netconf_port: 830
+    VRFs:
+      - name: RED
+    Profiles:
+      - name: vpnprof
+    interfaces:
+      - name: GigabitEthernet2
+        enabled: "true"
+        ip: '172.16.30.5'
+        mask: '255.255.255.0'
+    TunnelInterfaces:
+      - name: 0
+        enabled: "true"
+        ip: '10.0.0.5'
+        mask: '255.255.255.0'
+        source: GigabitEthernet2
+        profile: vpnprof
+        nbma_ip: '10.10.10.1'
+        hub_ip: '10.0.0.1'
+        VRF: RED
+        key: 100000
+        network_id: 100000
+    ospf:
+      process_id: 1
+      networks:
+       - network: 172.16.30.0
+         wildcard: 0.0.0.255
+         area: "0"
+
+
+  - name: spoke5
+    host_ip: '192.168.163.227'
+    netconf_port: 830
+    VRFs:
+      - name: RED
+    Profiles:
+      - name: vpnprof
+    interfaces:
+      - name: GigabitEthernet2
+        enabled: "true"
+        ip: '172.16.30.6'
+        mask: '255.255.255.0'
+    TunnelInterfaces:
+      - name: 0
+        enabled: "true"
+        ip: '10.0.0.6'
+        mask: '255.255.255.0'
+        source: GigabitEthernet2
+        profile: vpnprof
+        nbma_ip: '10.10.10.1'
+        hub_ip: '10.0.0.1'
+        VRF: RED
+        key: 100000
+        network_id: 100000
+    ospf:
+      process_id: 1
+      networks:
+       - network: 172.16.30.0
+         wildcard: 0.0.0.255
+         area: "0"
+
+  - name: spoke6
+    host_ip: '192.168.163.228'
+    netconf_port: 830
+    VRFs:
+      - name: RED
+    Profiles:
+      - name: vpnprof
+    interfaces:
+      - name: GigabitEthernet2
+        enabled: "true"
+        ip: '172.16.30.7'
+        mask: '255.255.255.0'
+    TunnelInterfaces:
+      - name: 0
+        enabled: "true"
+        ip: '10.0.0.7'
+        mask: '255.255.255.0'
+        source: GigabitEthernet2
+        profile: vpnprof
+        nbma_ip: '10.10.10.1'
+        hub_ip: '10.0.0.1'
+        VRF: RED
+        key: 100000
+        network_id: 100000
+    ospf:
+      process_id: 1
+      networks:
+       - network: 172.16.30.0
+         wildcard: 0.0.0.255
+         area: "0"
+
+  - name: spoke7
+    host_ip: '192.168.163.229'
+    netconf_port: 830
+    VRFs:
+      - name: RED
+    Profiles:
+      - name: vpnprof
+    interfaces:
+      - name: GigabitEthernet2
+        enabled: "true"
+        ip: '172.16.30.8'
+        mask: '255.255.255.0'
+    TunnelInterfaces:
+      - name: 0
+        enabled: "true"
+        ip: '10.0.0.8'
+        mask: '255.255.255.0'
+        source: GigabitEthernet2
+        profile: vpnprof
+        nbma_ip: '10.10.10.1'
+        hub_ip: '10.0.0.1'
+        VRF: RED
+        key: 100000
+        network_id: 100000
+    ospf:
+      process_id: 1
+      networks:
+       - network: 172.16.30.0
+         wildcard: 0.0.0.255
+         area: "0"
+
+  - name: spoke8
+    host_ip: '192.168.163.230'
+    netconf_port: 830
+    VRFs:
+      - name: RED
+    Profiles:
+      - name: vpnprof
+    interfaces:
+      - name: GigabitEthernet2
+        enabled: "true"
+        ip: '172.16.30.9'
+        mask: '255.255.255.0'
+    TunnelInterfaces:
+      - name: 0
+        enabled: "true"
+        ip: '10.0.0.9'
+        mask: '255.255.255.0'
+        source: GigabitEthernet2
+        profile: vpnprof
+        nbma_ip: '10.10.10.1'
+        hub_ip: '10.0.0.1'
+        VRF: RED
+        key: 100000
+        network_id: 100000
+    ospf:
+      process_id: 1
+      networks:
+       - network: 172.16.30.0
+         wildcard: 0.0.0.255
+         area: "0"
+
+  - name: spoke9
+    host_ip: '192.168.163.231'
+    netconf_port: 830
+    VRFs:
+      - name: RED
+    Profiles:
+      - name: vpnprof
+    interfaces:
+      - name: GigabitEthernet2
+        enabled: "true"
+        ip: '172.16.30.10'
+        mask: '255.255.255.0'
+    TunnelInterfaces:
+      - name: 0
+        enabled: "true"
+        ip: '10.0.0.10'
+        mask: '255.255.255.0'
+        source: GigabitEthernet2
+        profile: vpnprof
+        nbma_ip: '10.10.10.1'
+        hub_ip: '10.0.0.1'
+        VRF: RED
+        key: 100000
+        network_id: 100000
+    ospf:
+      process_id: 1
+      networks:
+       - network: 172.16.30.0
+         wildcard: 0.0.0.255
+         area: "0"

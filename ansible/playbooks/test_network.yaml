@@ -1,0 +1,26 @@
+---
+- name: Test Network
+  hosts: spokes
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Test reachability to DMVPN HUB
+      ios_ping:
+        dest: 10.0.0.1
+        vrf: RED
+        source: Tunnel0
+        count: 20
+      register: output
+    - debug: var=output
+
+    - name: CHECK TUNNEL INT | NHRP | DMVPN | IPSEC
+      ios_command:
+        commands:
+          - sh ip int br | i Tunnel
+          - sh ip nhrp
+          - sh dmvpn | begin Interface
+          - sh crypto ipsec sa | i pkts
+      register: output
+    - debug: var=output.stdout_lines
+

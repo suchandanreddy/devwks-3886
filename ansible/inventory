@@ -1,0 +1,18 @@
+
+[all:vars]
+
+#SSH connection
+ansible_network_os=ios
+ansible_user=cisco
+ansible_ssh_pass=cisco
+
+[spokes]
+spoke1 ansible_host=192.168.163.223
+spoke2 ansible_host=192.168.163.224
+spoke3 ansible_host=192.168.163.225
+spoke4 ansible_host=192.168.163.226
+spoke5 ansible_host=192.168.163.227
+spoke6 ansible_host=192.168.163.228
+spoke7 ansible_host=192.168.163.229
+spoke8 ansible_host=192.168.163.230
+spoke9 ansible_host=192.168.163.231
