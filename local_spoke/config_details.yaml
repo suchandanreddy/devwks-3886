@@ -5,8 +5,8 @@ password: cisco
 
 devices:
   - name: spoke1
-    host_ip: '192.168.163.223'
-    netconf_port: 830
+    host_ip: '127.0.0.1'
+    netconf_port: 
     VRFs:
       - name: RED
     Profiles:
@@ -14,7 +14,7 @@ devices:
     interfaces:
       - name: GigabitEthernet2
         enabled: "true"
-        ip: '172.16.30.2'
+        ip: '10.10.10.2'
         mask: '255.255.255.0'
     TunnelInterfaces:
       - name: 0
@@ -31,6 +31,6 @@ devices:
     ospf:
       process_id: 1
       networks:
-       - network: 172.16.30.0
+       - network: 10.10.10.0
          wildcard: 0.0.0.255
          area: "0"

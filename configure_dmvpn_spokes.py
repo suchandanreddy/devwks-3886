@@ -57,7 +57,7 @@ for device in config["devices"]:
                          username=config["username"],
                          password=config["password"],
                          hostkey_verify=False,
-                         device_params={'name': 'default'},
+                         device_params={'name': 'csr'},
                          allow_agent=False,
                          look_for_keys=False) as m:
 
