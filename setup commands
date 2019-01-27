@@ -27,6 +27,8 @@ HUB preconfig:
 
 vagrant ssh iosxe1
 
+conf t
+
 hostname HUB
 
 vrf definition RED
@@ -69,8 +71,13 @@ Spoke Preconfig:
 
 vagrant ssh iosxe2
 
+conf t
+
+hostname spoke
+
 ip access-list extended 104
-ip hostname spoke1
+
+do wr mem
 
 
 --------------------
