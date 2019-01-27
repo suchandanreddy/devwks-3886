@@ -1,0 +1,94 @@
+git clone https://github.com/suchandanreddy/devwks-3886.git
+
+virtualenv venv --python=python3
+
+source venv/bin/activate
+
+cd devwks-3886
+
+pip3 install -r requirements.txt
+
+pip3 install jupyter
+pip3 install requests
+
+vagrant box add iosxe/16.06.04 ../serial-csr1000v-universalk9.16.06.04.box
+
+vagrant up
+
+jupyter notebook
+
+
+#ansible-playbook test_network.yaml -u cisco -k -i ../inventory
+
+#mkdir dmvpn_spokes_config
+
+
+HUB preconfig:
+
+vagrant ssh iosxe1
+
+ip hostname HUB
+
+crypto isakmp policy 1
+ authentication pre-share
+crypto isakmp key cisco47 address 0.0.0.0
+crypto ipsec transform-set trans2 esp-des esp-md5-hmac
+ mode transport
+crypto ipsec profile vpnprof
+ set transform-set trans2
+
+interface Tunnel0
+ bandwidth 1000
+ vrf forwarding RED
+ ip address 10.0.0.1 255.255.255.0
+ no ip redirects
+ ip mtu 1400
+ ip nhrp authentication test
+ ip nhrp network-id 100000
+ ip ospf network broadcast
+ ip ospf priority 2
+ delay 1000
+ tunnel source GigabitEthernet2
+ tunnel mode gre multipoint
+ tunnel key 100000
+ tunnel protection ipsec profile vpnprof
+
+interface GigabitEthernet2
+ ip address 10.10.10.1 255.255.255.0
+ negotiation auto
+
+Spoke Preconfig:
+
+vagrant ssh iosxe2
+
+ip access-list extended 104
+ip hostname spoke1
+
+
+--------------------
+
+lab details:
+
+173.39.80.181(userid/password- ciscolive1/ciscolive1)
+
+
+https://192.168.163.220/ui/#/login
+
+root/cisco123
+
+
+
+Mgmt IP's
+
+HUB - 192.168.163.221
+ISP - 192.168.163.222
+Spoke1 - 192.168.163.223
+Spoke2 - 192.168.163.224
+Spoke3 - 192.168.163.225
+Spoke4 - 192.168.163.226
+Spoke5 - 192.168.163.227
+Spoke6 - 192.168.163.228
+Spoke7 - 192.168.163.229
+Spoke8 - 192.168.163.230
+Spoke9 - 192.168.163.231
+
