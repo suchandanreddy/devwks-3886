@@ -74,6 +74,7 @@ conf t
 hostname spoke
 
 ip access-list extended 104
+permit ip host 1.1.1.1 any
 
 do wr mem
 
