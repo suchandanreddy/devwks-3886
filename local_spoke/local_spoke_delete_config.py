@@ -9,7 +9,7 @@ import logging
 
 handler = logging.StreamHandler()
 #for l in ['ncclient.transport.ssh', 'ncclient.transport.session', 'ncclient.operations.rpc']:
-for l in ['ncclient.transport.rpc']:
+for l in ['ncclient.operations.rpc']:
     logger = logging.getLogger(l)
     if not logger.hasHandlers():
         logger.addHandler(handler)

@@ -1,12 +1,12 @@
-username: cisco
-password: cisco
+username: vagrant
+password: vagrant
 
 # Network Devices
 
 devices:
   - name: spoke1
     host_ip: '127.0.0.1'
-    netconf_port: 
+    netconf_port: 2223 
     VRFs:
       - name: RED
     Profiles:
