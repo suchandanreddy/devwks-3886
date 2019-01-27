@@ -15,8 +15,6 @@ vagrant box add iosxe/16.06.04 ../serial-csr1000v-universalk9.16.06.04.box
 
 vagrant up
 
-jupyter notebook
-
 
 #ansible-playbook test_network.yaml -u cisco -k -i ../inventory
 
@@ -79,6 +77,10 @@ ip access-list extended 104
 
 do wr mem
 
+
+--------------------
+
+jupyter notebook
 
 --------------------
 
