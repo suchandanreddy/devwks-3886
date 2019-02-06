@@ -2,7 +2,7 @@
 
 # prerequisite
 
-* Python 3.6
+* Python 3.7+
 
 * pip and virtualenv
 
@@ -10,12 +10,19 @@
 
 * VirtualBox
 
-# Intial Setup 
+### Install and Setup
 
-* virtualenv venv --python=python3
+Clone the code to local machine.
 
-* source venv/bin/activate
+```
+git clone https://github.com/suchandanreddy/devwks-3886.git
+cd devwks-3886
+```
 
-* pip3 install -r requirements.txt
+Setup Python Virtual Environment (requires Python 3.7+)
 
-* pip3 install jupyter
+```
+python3.7 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+```
