@@ -37,10 +37,6 @@ vagrant box add iosxe/16.06.04 ../serial-csr1000v-universalk9.16.06.04.box
 vagrant up
 ```
 
-#ansible-playbook test_network.yaml -u cisco -k -i ../inventory
-
-#mkdir dmvpn_spokes_config
-
 HUB preconfig:
 
 ```
