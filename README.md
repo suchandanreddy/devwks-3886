@@ -1,4 +1,4 @@
-# devwks-3886
+# DEVWKS-3886
 
 # prerequisite
 
@@ -43,9 +43,9 @@ vagrant up
 
 HUB preconfig:
 
+```
 vagrant ssh iosxe1
 
-```
 conf t
 
 hostname HUB
@@ -104,5 +104,6 @@ do wr mem
 
 Start the jupyter notebook and open localhost:8888 in browser to access netconf.ipynb and restconf.ipynb
 
+```
 jupyter notebook
-
+```
