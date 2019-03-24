@@ -45,6 +45,7 @@ HUB preconfig:
 
 vagrant ssh iosxe1
 
+```
 conf t
 
 hostname HUB
@@ -84,9 +85,11 @@ interface GigabitEthernet2
  negotiation auto
 
 do wr mem
+```
 
 Spoke Preconfig:
 
+```
 vagrant ssh iosxe2
 
 conf t
@@ -97,10 +100,9 @@ ip access-list extended 104
 permit ip host 1.1.1.1 any
 
 do wr mem
+```
 
-
---------------------
+Start the jupyter notebook and open localhost:8888 in browser to access netconf.ipynb and restconf.ipynb
 
 jupyter notebook
 
---------------------
