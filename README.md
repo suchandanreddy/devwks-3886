@@ -37,6 +37,8 @@ vagrant box add iosxe/16.06.04 ../serial-csr1000v-universalk9.16.06.04.box
 vagrant up
 ```
 
+Please configure HUB and Spoke CSR 1000v router as per below pre-config. 
+
 HUB preconfig:
 
 ```
