@@ -66,18 +66,22 @@ for device in config["devices"]:
         # Send NETCONF Configurations using <edit-config>
     
         print("Sending Configuration via NETCONF by using edit-config operation")
-    
-        interface_resp = m.edit_config(interface_config, target="running")
+        
+        try:
+        	interface_resp = m.edit_config(interface_config, target="running")
 
-        crypto_resp = m.edit_config(crypto_config, target = "running")
+        	crypto_resp = m.edit_config(crypto_config, target = "running")
 
         # Process reply XML data
     
         # print(crypto_resp)
 
-        interface_reply = xmltodict.parse(interface_resp.xml)
+        	interface_reply = xmltodict.parse(interface_resp.xml)
 
-        crypto_reply = xmltodict.parse(crypto_resp.xml)
+        	crypto_reply = xmltodict.parse(crypto_resp.xml)
+        	
+        except Exception as e:
+        	pass
 
         print("Interface Config: {}".format(crypto_reply["rpc-reply"]))
     
