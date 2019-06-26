@@ -25,7 +25,6 @@ Setup Python Virtual Environment (requires Python 3.7+)
 python3.7 -m venv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
-pip3 install jupyter requests
 ```
 
 Add the vagrant box image and spin up two CSR1000v routers. ( Please note on workshop laptops we have downloaded .box already )
